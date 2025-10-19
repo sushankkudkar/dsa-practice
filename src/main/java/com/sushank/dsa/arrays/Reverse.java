@@ -2,7 +2,7 @@ package com.sushank.dsa.arrays;
 
 import java.util.Arrays;
 
-public class ReverseArray {
+public class Reverse {
     public static void reverseSortedArray(int[] arr) {
         int left = 0, right = arr.length - 1;
         while (left < right) {
