@@ -20,32 +20,28 @@ public class LargestContainer {
 
     public static void main(String[] args) {
 
-        int[] heights =
-                new int[]{1,8,6,2,5,4,8,3,7};
-        int result = maxArea(heights);
-        System.out.println("Largest Container can hold: " + result);
+        int[] heights = {1,8,6,2,5,4,8,3,7};
+        int maxAmtOfWater = calcMaxAmtOfWater(heights);
+        System.out.println("Largest Container can hold: " + maxAmtOfWater);
     }
 
-    public static int maxArea(int[] heights) {
+    public static int calcMaxAmtOfWater(int[] heights) {
 
-        if (heights == null || heights.length < 2) {
-            return 0;
-        }
         int left = 0;
         int right = heights.length - 1;
-        int maxArea = 0;
+        int maxAmtOfWater = 0;
 
-        while (left < right) {
+        while(left < right) {
             int width = right - left;
 
-            if (heights[left] < heights[right]) {
-                maxArea = Math.max(maxArea, width * heights[left]);
+            if(heights[left] < heights[right]) {
+                maxAmtOfWater = Math.max(maxAmtOfWater, width * heights[left]);
                 left++;
             } else {
-                maxArea = Math.max(maxArea, width * heights[right]);
+                maxAmtOfWater = Math.max(maxAmtOfWater, width * heights[right]);
                 right--;
             }
         }
-        return maxArea;
-        }
+        return maxAmtOfWater;
     }
+}

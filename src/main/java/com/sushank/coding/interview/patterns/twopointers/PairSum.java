@@ -21,31 +21,26 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class PairSum {
+
     public static void main(String[] args) {
-        int[] inputArray = {-5, -2, 3, 4, 6};
+
+        int[] nums = {-5, -2, 3, 4, 6};
         int target = 7;
 
-        int[] indexes = pairSum(inputArray, target);
-        System.out.println("Pair Sum Result: " + Arrays.toString(indexes));
+        int[] results = pairSum(nums, target);
+        System.out.println("Pair Sum Result: " + Arrays.toString(results));
     }
 
-    public static int[] pairSum(int[] inputArray, int target) {
-        int[] results = new int[0];
-
+    public static int[] pairSum(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>();
-
-        return getInts(inputArray, target, results, map);
-    }
-
-    public static int[] getInts(int[] inputArray, int target, int[] results, Map<Integer, Integer> map) {
-        for(int i = 0; i < inputArray.length; i++) {
-            int complement = target - inputArray[i];
+        int[] results = new int[0];
+        for(int i=0; i< nums.length; i++) {
+            int complement = target - nums[i];
             if(map.containsKey(complement)) {
                 results = new int[]{map.get(complement), i};
             }
-            map.put(inputArray[i], i);
+            map.put(nums[i], i);
         }
         return results;
     }
-
 }

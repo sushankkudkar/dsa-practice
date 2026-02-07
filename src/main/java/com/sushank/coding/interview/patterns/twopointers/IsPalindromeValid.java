@@ -20,12 +20,14 @@ The string may include a combination of lowercase English letters, numbers, spac
 public class IsPalindromeValid {
 
     public static void main(String[] args) {
-        String inputString = "A man, a plan, a canal: Panama";
+
+        String inputString = "a dog! a panic in a pagoda.";
         boolean result = isPalindrome(inputString);
         System.out.println("Is Input String Palindrome: " + result);
     }
 
     public static boolean isPalindrome(String inputString) {
+
         int left = 0;
         int right = inputString.length() - 1;
 
@@ -52,3 +54,4 @@ public class IsPalindromeValid {
         return true;
     }
 }
+
